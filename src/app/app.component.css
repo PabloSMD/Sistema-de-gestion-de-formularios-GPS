@@ -16,7 +16,6 @@
   grid-template-columns: 300px 900px 300px;
   grid-template-rows: 50px 1fr 1fr 1fr 50px;
 }
-
 @media screen and (max-width: 660px) {
   .container{
     grid-template-areas:
@@ -27,12 +26,10 @@
     "footer";
   }
 }
-
 .nav {
   background-color: #4a78c4;
   height: 60px;
 }
-
 .main-encuestas {
   background-color:#ffffff;
   padding-top: 30px;
@@ -84,10 +81,15 @@ padding-right: 40px;
   background-color: #eaf2ff;
   grid-area: side-bar;
 }
+.mainCrear {
+  text-align: center;
+  margin-top: 10px;
+  padding-left: 27px;
+  padding-right: 27px;
+}
 .logoUbb {
-  padding-left: 4%;
+  padding-left: 12%;
   height: 180px;
-
 }
 .footer {
   background-color:#4a78c4;
@@ -111,6 +113,7 @@ padding-right: 40px;
   margin-top: 450px;
   padding-left: 70px;
   padding-right: 65px;
+  text-align: center;
 }
 .btnPlataformas{
   background-color:#4879c4;
@@ -120,4 +123,38 @@ margin-bottom: 10px;
 padding-left: 28px;
 padding-right: 28px;
 }
-
+#body-row {
+  margin-left:0;
+  margin-right:0;
+}
+.sidebar-expanded {
+  width: 300px;
+}
+#sidebar-container .list-group a {
+  height: 50px;
+  color: white;
+}
+#sidebar-container .list-group .sidebar-submenu a {
+  height: 45px;
+  padding-left: 30px;
+}
+.sidebar-submenu {
+  font-size: 0.9rem;
+}
+.list-group-item {
+  border: 0;
+}
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+content: " \f0d7";
+font-family: FontAwesome;
+display: inline;
+text-align: right;
+padding-left: 10px;
+}
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+content: " \f0da";
+font-family: FontAwesome;
+display: inline;
+text-align: right;
+padding-left: 10px;
+}
