@@ -1,0 +1,117 @@
+<aside class="side-bar">
+  <img class="logoUbb" src="../assets/Escudo color gradiente 2.png" />
+
+  <div class="row" id="body-row">
+    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+      <ul class="list-group">
+        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
+          class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="menu-collapsed" style="color: black">Encuestas Disponibles</span>
+            <span class="submenu-icon ml-auto"></span>
+          </div>
+        </a>
+        <div id="submenu1" class="collapse sidebar-submenu">
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Encuestas de Tesis</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Encuestas de Asignaturas</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Ver Todo</span>
+          </a>
+        </div>
+        <a href="#submenu2" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
+          class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="menu-collapsed" style="color: black">Actividades Disponibles</span>
+            <span class="submenu-icon ml-auto"></span>
+          </div>
+        </a>
+
+        <div id="submenu2" class="collapse sidebar-submenu">
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Conversatorios y Charlas</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Cursos</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Concursos</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Ver Todo</span>
+          </a>
+        </div>
+        <a href="#submenu3" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
+          class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="menu-collapsed" style="color: black">Mis Encuestas</span>
+            <span class="submenu-icon ml-auto"></span>
+          </div>
+        </a>
+        <div id="submenu3" class="collapse sidebar-submenu">
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Encuestas Disponibles</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Encuestas Realizadas</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action text-white"
+            style="width: 300px; background-color: #eaf2ff">
+            <span class="menu-collapsed" style="color: gray">Ver Todo</span>
+          </a>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Hide submenus
+    $("#body-row .collapse").collapse("hide");
+
+    // Collapse/Expand icon
+    $("#collapse-icon").addClass("fa-angle-double-left");
+
+    // Collapse click
+    $("[data-toggle=sidebar-colapse]").click(function () {
+      SidebarCollapse();
+    });
+
+    function SidebarCollapse() {
+      $(".menu-collapsed").toggleClass("d-none");
+      $(".sidebar-submenu").toggleClass("d-none");
+      $(".submenu-icon").toggleClass("d-none");
+      $("#sidebar-container").toggleClass("sidebar-expanded sidebar-collapsed");
+      // Treating d-flex/d-none on separators with title
+      var SeparatorTitle = $(".sidebar-separator-title");
+      if (SeparatorTitle.hasClass("d-flex")) {
+        SeparatorTitle.removeClass("d-flex");
+      } else {
+        SeparatorTitle.addClass("d-flex");
+      }
+      // Collapse/Expand icon
+      $("#collapse-icon").toggleClass(
+        "fa-angle-double-left fa-angle-double-right"
+      );
+    }
+
+  </script>
+  <div class="mainCrear">
+    <button type="button" class="btnPlataformas btn" routerLink="/crearEncuesta">
+      Crear Encuesta
+    </button>
+    <br />
+    <button type="button" class="btnPlataformas btn">Crear Actividad</button>
+  </div>
+</aside>
