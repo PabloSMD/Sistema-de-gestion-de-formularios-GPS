@@ -1,3 +1,110 @@
 <div class="container">
-    <h1>ACA DEBE IR EL CREAR ENCUESTA</h1>
+  <!-- <header class="header"> Header </header> -->
+
+  <!--
+    SIDE BAR IZQUIERDO
+  -->
+  <app-side-bar-izq></app-side-bar-izq>
+
+  <main class="main-content">
+    <div class="nav"></div>
+    <div class="main-encuestas">
+      <h1 class="encuestasTitulo"><b>Crear Encuesta</b></h1>
+      <div class="encuestas">
+        <div class="crear-encuesta">
+          <div class="row">
+            <div style="padding-bottom: 20px; font-size: x-large">
+              A continuación, debe rellenar todos los datos e información
+              solicitada para crear su encuesta.
+            </div>
+            <div class="col-5">
+              <div style="font-size: x-large;
+              padding-bottom: 15px;">Título</div>
+              <div style="font-size:x-large;
+              padding-bottom: 15px;">Tipo de Encuesta</div>
+              <div style="font-size: x-large;
+              padding-bottom: 97px;">Descripción</div>
+              <div style="font-size:x-large;
+              padding-bottom: 15px;">Público</div>
+              <div style="font-size: x-large;
+              padding-bottom: 15px;">URL</div>
+              <div style="font-size: x-large;
+              padding-bottom: 15px;">Vencimiento</div>
+              <div style="font-size: x-large;
+              padding-bottom: 20px;">Premio (opcional)</div>
+            </div>
+            <div class="col-7">
+              <input
+                class="crear-encuesta-input"
+                placeholder="Escribe el título de tu encuesta..."
+              />
+              <br />
+              <div class="btn-group">
+                <button
+                  style="text-align: left"
+                  class="crear-encuesta-input btn btn-lg dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Seleccione un tipo de encuesta...
+                </button>
+                <div class="dropdown-menu">
+                  <!-- MEJORAR OPCIONES  -->
+                  <button class="dropdown-item" type="button">Tipo de encuesta 1</button>
+                  <button class="dropdown-item" type="button">Tipo de encuesta 2</button>
+                  <button class="dropdown-item" type="button">Tipo de encuesta 3</button>
+                </div>
+              </div>
+              <textarea
+                style="height: 120px;"
+                class="crear-encuesta-input"
+                placeholder="Describe tu encuesta..."
+              ></textarea>
+              <br />
+              <input
+                class="crear-encuesta-input"
+                placeholder="Público al que va dirigido"
+              />
+              <br />
+              <input
+                class="crear-encuesta-input"
+                placeholder="Agregar la URL de tu encuesta"
+              />
+              <br />
+              <input
+                type="date"
+                style="width: 200px; text-align: center"
+                class="crear-encuesta-input"
+                placeholder="dd/mm/aa"
+              /><br />
+
+              <input
+                class="crear-encuesta-input"
+                placeholder="Describa brevemente la recompensa"
+              /><br />
+            </div>
+            <a style="padding-bottom: 25px; font-size: medium;">
+<b>   Luego de enviar la solicitud la encuesta será
+  aceptada/rechazada por un moderador.</b>
+
+            </a>
+            <div style="padding-left: 340px;" class ="botones">
+              <button type="button" style="    margin-right: 10px;" class="btnAceptar btn">Enviar Solicitud</button>
+              <button type="button" class="btn btnCancelar">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--
+    SIDE BAR DERECHO
+  -->
+  <app-side-bar-der></app-side-bar-der>
+  <!--
+    FOOTER
+   -->
+  <footer class="footer"></footer>
 </div>
