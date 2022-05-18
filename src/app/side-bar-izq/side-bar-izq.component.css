@@ -6,13 +6,13 @@
     height: 100vh;
     display: grid;
     grid-template-areas:
-  
+
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "footer footer footer";
-  
+
     grid-template-columns: 300px 900px 300px;
     grid-template-rows: 50px 1fr 1fr 1fr 50px;
   }
@@ -38,7 +38,7 @@
     grid-area: main;
   }
   .encuestasTitulo {
-  
+
     padding-bottom: 60px;
   }
   .encuesta{
@@ -78,6 +78,7 @@
   padding-right: 40px;
   }
   .side-bar {
+    height: 888px;
     background-color: #eaf2ff;
     grid-area: side-bar;
   }
@@ -154,4 +155,3 @@
   text-align: right;
   padding-left: 10px;
   }
-  
