@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormularioService } from '../services/formulario.service';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-reponder-formulario',
+  templateUrl: './reponder-formulario.component.html',
+  styleUrls: ['./reponder-formulario.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ReponderFormularioComponent implements OnInit {
 
   constructor(public formularioService:FormularioService) { }
-  
+
 
   ngOnInit(): void {
     this.formularioService.getFormularios().subscribe((res:any[]) =>{
@@ -17,5 +17,6 @@ export class HomeComponent implements OnInit {
     },
     err => console.log(err))
   }
-
+  url=this.formularioService.formularios[0].Url;
+  
 }
