@@ -1,0 +1,112 @@
+<div class="container">
+    <!-- <header class="header"> Header </header> -->
+  
+    <!--
+      SIDE BAR IZQUIERDO
+    -->
+    <app-side-bar-izq></app-side-bar-izq>
+  
+    <main class="main-content">
+      <div class="nav"></div>
+      <div class="main-encuestas">
+        <h1 class="encuestasTitulo"><b>Crear Actividad</b></h1>
+        <div class="encuestas">
+          <div class="crear-encuesta">
+            <div class="row">
+              <div style="padding-bottom: 20px; font-size: x-large">
+                A continuación, debe rellenar todos los datos e información
+                solicitada para crear su actividad.
+              </div>
+              <div class="col-5">
+                <div style="font-size: x-large;
+                padding-bottom: 15px;">Título</div>
+                <div style="font-size:x-large;
+                padding-bottom: 15px;">Tipo de Encuesta</div>
+                <div style="font-size: x-large;
+                padding-bottom: 97px;">Descripción</div>
+                <div style="font-size:x-large;
+                padding-bottom: 15px;">Público</div>
+                <div style="font-size: x-large;
+                padding-bottom: 15px;">URL</div>
+                <div style="font-size: x-large;
+                padding-bottom: 15px;">Vencimiento</div>
+                <div style="font-size: x-large;
+                padding-bottom: 20px;">Premio (opcional)</div>
+              </div>
+              <div class="col-7">
+                <input
+                  class="crear-encuesta-input"
+                  placeholder="Escribe el título de tu actividad..."
+                />
+                <br />
+                <div class="btn-group">
+                  <button
+                    style="text-align: left"
+                    class="crear-encuesta-input btn btn-lg dropdown-toggle"
+                    type="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Seleccione un tipo de actividad...
+                  </button>
+                  <div class="dropdown-menu">
+                    <!-- MEJORAR OPCIONES  -->
+                    <button class="dropdown-item" type="button">Conversatorios y Charlas</button>
+                    <button class="dropdown-item" type="button">Cursos</button>
+                    <button class="dropdown-item" type="button">Concursos</button>
+                    <button class="dropdown-item" type="button">Otro</button>
+                  </div>
+                </div>
+                <textarea
+                  style="height: 120px;"
+                  class="crear-encuesta-input"
+                  placeholder="Describe tu actividad..."
+                ></textarea>
+                <br />
+                <input
+                  class="crear-encuesta-input"
+                  placeholder="Público al que va dirigido"
+                />
+                <br />
+                <input
+                  class="crear-encuesta-input"
+                  placeholder="Agrega la URL de la inscripción..."
+                />
+                <br />
+                <input
+                  type="date"
+                  style="width: 200px; text-align: center"
+                  class="crear-encuesta-input"
+                  placeholder="dd/mm/aa"
+                /><br />
+  
+                <input
+                  class="crear-encuesta-input"
+                  placeholder="Describa brevemente la recompensa"
+                /><br />
+              </div>
+              <a style="padding-bottom: 25px; font-size: medium;">
+  <b>   Luego de enviar la solicitud la actividad será
+    aceptada/rechazada por un moderador.</b>
+  
+              </a>
+              <div style="padding-left: 340px;" class ="botones">
+                <button type="button" style="    margin-right: 10px;" class="btnAceptar btn">Enviar Solicitud</button>
+                <button type="button" class="btn btnCancelar">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--
+      SIDE BAR DERECHO
+    -->
+    <app-side-bar-der></app-side-bar-der>
+    <!--
+      FOOTER
+     -->
+    <footer class="footer"></footer>
+  </div>
+  

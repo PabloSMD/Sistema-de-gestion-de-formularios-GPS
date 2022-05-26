@@ -6,13 +6,13 @@
     height: 100vh;
     display: grid;
     grid-template-areas:
-
+  
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "footer footer footer";
-
+  
     grid-template-columns: 300px 900px 300px;
     grid-template-rows: 50px 1fr 1fr 1fr 50px;
   }
@@ -38,8 +38,30 @@
     grid-area: main;
   }
   .encuestasTitulo {
-
-    padding-bottom: 60px;
+  
+    padding-bottom: 15px;
+  }
+  .crear-encuesta {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    border: solid gray;
+    padding-left: 60px;
+    padding-right: 60px;
+    height: 700px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .crear-encuesta-input {
+    border-radius: 20px;
+    padding-bottom: 10px;
+    width: 350px;
+    padding: 2px;
+    padding-left: 10px;
+    font-size: larger;
+    background-color: white;
+    border: solid gray;
+    margin-bottom: 10px;
+  
   }
   .encuesta{
     background-color: #f3f3f3;
@@ -78,7 +100,6 @@
   padding-right: 40px;
   }
   .side-bar {
-    height: 888px;
     background-color: #eaf2ff;
     grid-area: side-bar;
   }
@@ -91,6 +112,10 @@
   .logoUbb {
     padding-left: 12%;
     height: 180px;
+  }
+  .footer {
+    background-color:#4a78c4;
+    grid-area: footer;
   }
   .side-bar2 {
     background-color:#eaf2ff;
@@ -155,3 +180,4 @@
   text-align: right;
   padding-left: 10px;
   }
+  

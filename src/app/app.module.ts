@@ -9,6 +9,7 @@ import { SideBarIzqComponent } from './side-bar-izq/side-bar-izq.component';
 import { SideBarDerComponent } from './side-bar-der/side-bar-der.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReponderFormularioComponent } from './reponder-formulario/reponder-formulario.component';
+import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReponderFormularioComponent } from './reponder-formulario/reponder-form
     CrearEncuestaComponent,
     SideBarIzqComponent,
     SideBarDerComponent,
-    ReponderFormularioComponent
+    ReponderFormularioComponent,
+    CrearActividadComponent
   ],
   imports: [
     BrowserModule,
