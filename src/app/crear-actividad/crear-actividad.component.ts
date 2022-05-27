@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 @Component({
   selector: 'app-crear-actividad',
   templateUrl: './crear-actividad.component.html',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearActividadComponent implements OnInit {
 
-  constructor() { }
+  formFormulario:FormGroup;
+
+  constructor(private formBuilder:FormBuilder) {
+    this.formFormulario=this.formBuilder.group({
+
+    })
+  }
 
   ngOnInit(): void {
   }

@@ -17,4 +17,8 @@ export class FormularioService {
     return this.http.get<IFormlario[]>('http://localhost:3000/formularios').pipe(map((res:any) => res.data));
   }
 
+  saveFormulario(formulario:IFormlario){
+    return this.http.post<IFormlario[]>('http://localhost:3000/formulario',formulario);
+  }
+
 }

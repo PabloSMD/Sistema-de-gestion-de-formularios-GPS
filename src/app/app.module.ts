@@ -10,6 +10,7 @@ import { SideBarDerComponent } from './side-bar-der/side-bar-der.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReponderFormularioComponent } from './reponder-formulario/reponder-formulario.component';
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CrearActividadComponent } from './crear-actividad/crear-actividad.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
