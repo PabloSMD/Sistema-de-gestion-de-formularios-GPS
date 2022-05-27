@@ -11,58 +11,19 @@
         <div class="main-encuestas">
           <h1 class="encuestasTitulo"><b>Encuestas Disponibles</b></h1>
           <div class="encuestas">
-            <div class="encuesta">
+            <div class="encuesta" *ngFor="let formulario of this.formularioService.formularios">
               <div class="row">
                 <div class="col-8">
-                  <h3>Encuesta para Memoria de Título</h3>
+                  <h3>{{formulario.Titulo}}</h3>
                   <p>
-                    Junto con saludar y esperando que se encuentren bien junto a sus
-                    seres queridos, nos permitimos solicitar su colaboración...
+                    {{formulario.Descripcion}}
                   </p>
-                  <a class="date">23-03-2022</a>
+                  <a class="date">{{formulario.FechaVencimiento| date:'dd/MM/yyyy'}}</a>
                 </div>
                 <div class="col-4 botones">
-                  <a class="departamentoEncuesta">Enfermería</a>
-                  <button type="button" class="btn btnAceptar">Responder</button>
-                  <br />
-                  <button type="button" class="btn btnCancelar">Ignorar</button>
-                </div>
-              </div>
-            </div>
-            <div class="encuesta">
-              <div class="row">
-                <div class="col-8">
-                  <h3>Encuesta para Memoria de Título</h3>
-                  <p>
-                    Para concretar este trabajo les solicitamos que participen en
-                    este estudio y puedan responder la siguiente encuesta que...
-                  </p>
-                  <a class="date">21-03-2022</a>
-                </div>
-                <div class="col-4 botones">
-                  <a class="departamentoEncuesta">Ing.Comercial</a>
-                  <button type="button" class="btn btn-primary btnAceptar">
-                    Responder
-                  </button>
-                  <br />
-                  <button type="button" class="btn btnCancelar">Ignorar</button>
-                </div>
-              </div>
-            </div>
-            <div class="encuesta">
-              <div class="row">
-                <div class="col-8">
-                  <h3>Encuesta para Memoria de Título</h3>
-                  <p>
-                    Desde la Dirección de Desarrollo Estudiantil (DDE) estamos
-                    llevando a cabo un proceso que permita analizar el impacto...
-                  </p>
-                  <a class="date">17-03-2022</a>
-                </div>
-                <div class="col-4 botones">
-                  <a class="departamentoEncuesta">DDE</a>
-                  <button type="button" class="btnAceptar btn">Responder</button>
-                  <br />
+                  <a class="departamentoEncuesta">{{formulario.Tipo}}</a>
+                  <button type="button" class="btn btnAceptar" routerLink="respoderEncuesta">Responder</button>
+                  <br/>
                   <button type="button" class="btn btnCancelar">Ignorar</button>
                 </div>
               </div>

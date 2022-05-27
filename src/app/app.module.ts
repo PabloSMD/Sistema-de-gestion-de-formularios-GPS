@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { CrearEncuestaComponent } from './crear-encuesta/crear-encuesta.component';
 import { SideBarIzqComponent } from './side-bar-izq/side-bar-izq.component';
 import { SideBarDerComponent } from './side-bar-der/side-bar-der.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReponderFormularioComponent } from './reponder-formulario/reponder-formulario.component';
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
 
 @NgModule({
@@ -16,11 +18,13 @@ import { CrearActividadComponent } from './crear-actividad/crear-actividad.compo
     CrearEncuestaComponent,
     SideBarIzqComponent,
     SideBarDerComponent,
+    ReponderFormularioComponent,
     CrearActividadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

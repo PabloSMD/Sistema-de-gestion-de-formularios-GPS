@@ -8,6 +8,7 @@ import {
 
 import { HomeComponent } from './home/home.component';
 import { CrearEncuestaComponent } from './crear-encuesta/crear-encuesta.component';
+import { ReponderFormularioComponent } from './reponder-formulario/reponder-formulario.component';
 import { SideBarDerComponent } from './side-bar-der/side-bar-der.component';
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
 
@@ -19,6 +20,9 @@ const routes: Routes = [
   //------------------- Home -----------------
   { path: '', component: HomeComponent },
   
+  { path: '', component: HomeComponent},  
+  {path:'crearEncuesta',component:CrearEncuestaComponent},
+  {path:'respoderEncuesta',component:ReponderFormularioComponent},
   //----------------Crear Encuesta------------
   { path: 'crearEncuesta', component: CrearEncuestaComponent },
 
