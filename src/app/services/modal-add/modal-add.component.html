@@ -1,0 +1,13 @@
+<div class="modal" [ngStyle]="{'display':modaladdService.oculto}" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Desea Ingresar este Formulario</h5>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" class="btn btn-primary">Guardar Formulario</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="ocultarModal()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+</div>

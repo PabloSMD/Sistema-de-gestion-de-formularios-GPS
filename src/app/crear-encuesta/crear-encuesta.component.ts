@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IFormlario } from '../formulario';
 import { FormularioService } from '../services/formulario.service';
+import { ModalAddService } from '../services/modal-add.service';
 @Component({
   selector: 'app-crear-encuesta',
   templateUrl: './crear-encuesta.component.html',
@@ -12,7 +13,8 @@ export class CrearEncuestaComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private formularioService: FormularioService
+    private formularioService: FormularioService,
+    private modaladdService:ModalAddService
   ) {
     this.formFormulario = this.formBuilder.group({
       descripcion: ['', [Validators.required]],
@@ -23,7 +25,14 @@ export class CrearEncuestaComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {}
+
+  abrirModal(){
+    this.modaladdService.mostrarModal();
+  }
+
   saveData() {
+    this.abrirModal();
     let formulario:any={
       descripcion:this.formFormulario.value.descripcion,
       url:this.formFormulario.value.url,
@@ -31,15 +40,17 @@ export class CrearEncuestaComponent implements OnInit {
       titulo:this.formFormulario.value.titulo,
       fechavencimiento:this.formFormulario.value.fechavencimiento
     }
-    this.formularioService.saveFormulario(formulario).subscribe(() => {
-      return this.formularioService.saveFormulario(formulario).subscribe(
-        (res: any[]) => {
-          this.formularioService.formularios = res;
-        },
-        (err) => console.log(err)
-      );
-    });
+    this.guardarFormulario(formulario);
   }
 
-  ngOnInit(): void {}
+  guardarFormulario(formulario:IFormlario){
+    this.formularioService.saveFormulario(formulario).subscribe(() => {
+      return this.formularioService.getFormularios().subscribe((res:any[])=>{
+        this.formularioService.formularios=res
+      },
+      err=> console.log(err)
+      )
+    });
+    this.formFormulario.reset();
+  }
 }

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReponderFormularioComponent } from './reponder-formulario/reponder-formulario.component';
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ModalAddComponent } from './services/modal-add/modal-add.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     SideBarIzqComponent,
     SideBarDerComponent,
     ReponderFormularioComponent,
-    CrearActividadComponent
+    CrearActividadComponent,
+    ModalAddComponent
   ],
   imports: [
     BrowserModule,
