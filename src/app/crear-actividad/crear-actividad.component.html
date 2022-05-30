@@ -17,87 +17,50 @@
                 A continuación, debe rellenar todos los datos e información
                 solicitada para crear su actividad.
               </div>
-              <div class="col-5">
-                <div style="font-size: x-large;
-                padding-bottom: 15px;">Título</div>
-                <div style="font-size:x-large;
-                padding-bottom: 15px;">Tipo de Encuesta</div>
-                <div style="font-size: x-large;
-                padding-bottom: 97px;">Descripción</div>
-                <div style="font-size:x-large;
-                padding-bottom: 15px;">Público</div>
-                <div style="font-size: x-large;
-                padding-bottom: 15px;">URL</div>
-                <div style="font-size: x-large;
-                padding-bottom: 15px;">Vencimiento</div>
-                <div style="font-size: x-large;
-                padding-bottom: 20px;">Premio (opcional)</div>
-              </div>
-              <div class="col-7">
-                <input
-                  class="crear-encuesta-input"
-                  placeholder="Escribe el título de tu actividad..."
-                />
-                <br />
-                <div class="btn-group">
-                  <button
-                    style="text-align: left"
-                    class="crear-encuesta-input btn btn-lg dropdown-toggle"
-                    type="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Seleccione un tipo de actividad...
-                  </button>
-                  <div class="dropdown-menu">
-                    <!-- MEJORAR OPCIONES  -->
-                    <button class="dropdown-item" type="button">Conversatorios y Charlas</button>
-                    <button class="dropdown-item" type="button">Cursos</button>
-                    <button class="dropdown-item" type="button">Concursos</button>
-                    <button class="dropdown-item" type="button">Otro</button>
+              <form [formGroup]="formFormulario" id="formulario" (ngSubmit)="saveData()" (ngSubmit)="formFormulario.reset" novalidate>
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Titulo</label>
+                  <div class="col-sm-10">
+                    <input formControlName="titulo" type="text" class="form-control"  placeholder="Titulo">
+                    <div *ngIf="formFormulario.get('titulo')?.errors &&(formFormulario.get('titulo')?.touched
+                        || formFormulario.get('titulo')?.dirty)"
+                        class="alert alert-danger">El Titulo del Formulario es obligatorio.
+                    </div>
                   </div>
                 </div>
-                <textarea
-                  style="height: 120px;"
-                  class="crear-encuesta-input"
-                  placeholder="Describe tu actividad..."
-                ></textarea>
-                <br />
-                <input
-                  class="crear-encuesta-input"
-                  placeholder="Público al que va dirigido"
-                />
-                <br />
-                <input
-                  class="crear-encuesta-input"
-                  placeholder="Agrega la URL de la inscripción..."
-                />
-                <br />
-                <input
-                  type="date"
-                  style="width: 200px; text-align: center"
-                  class="crear-encuesta-input"
-                  placeholder="dd/mm/aa"
-                /><br />
-  
-                <input
-                  class="crear-encuesta-input"
-                  placeholder="Describa brevemente la recompensa"
-                /><br />
-              </div>
-              <a style="padding-bottom: 25px; font-size: medium;">
-  <b>   Luego de enviar la solicitud la actividad será
-    aceptada/rechazada por un moderador.</b>
-  
-              </a>
-              <div style="padding-left: 340px;" class ="botones">
-                <button type="button" style="    margin-right: 10px;" class="btnAceptar btn">Enviar Solicitud</button>
-                <button type="button" class="btn btnCancelar">Cancelar</button>
-              </div>
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Tipo</label>
+                  <div class="col-sm-10">
+                    <input formControlName="tipo" type="text" class="form-control" placeholder="Tipo">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Descripcion</label>
+                  <div class="col-sm-10">
+                    <textarea formControlName="descripcion" class="form-control" rows="3" cols="40" placeholder="Escribe aquí tu descripcion"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Url</label>
+                  <div class="col-sm-10">
+                    <input formControlName="url" type="url" class="form-control" placeholder="Url">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Fecha de Vencimiento</label>
+                  <div class="col-sm-3">
+                    <input formControlName="fechavencimiento" type="date" class="form-control" placeholder="Fecha de Vencimiento">
+                  </div>
+                </div>
+                <div style="padding-left: 340px;" class ="botones">
+                  <button type="submit" [disabled]="!formFormulario.valid" style="    margin-right: 10px;" class="btnAceptar btn">Enviar Solicitud</button>
+                  <button type="button" class="btn btnCancelar">Cancelar</button>
+                </div>  
+              </form>  
             </div>
           </div>
         </div>
+        <app-modal-add></app-modal-add>
       </div>
     </main>
     <!--
