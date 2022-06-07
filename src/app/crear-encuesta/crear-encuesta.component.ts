@@ -38,7 +38,8 @@ export class CrearEncuestaComponent implements OnInit {
       url:this.formFormulario.value.url,
       tipo:this.formFormulario.value.tipo,
       titulo:this.formFormulario.value.titulo,
-      fechavencimiento:this.formFormulario.value.fechavencimiento
+      fechavencimiento:this.formFormulario.value.fechavencimiento,
+      estado:"DISPONIBLE"
     }
     this.guardarFormulario(formulario);
   }
