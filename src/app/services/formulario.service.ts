@@ -12,6 +12,7 @@ export class FormularioService {
  
   public formularios:IFormlario[]=[];
   public formulario:any=[];
+  
   public encuestas:IFormlario[]=[];
   public actividades:IFormlario[]=[];
 

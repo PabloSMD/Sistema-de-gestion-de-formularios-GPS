@@ -1,0 +1,50 @@
+<div class="container">
+    <!-- <header class="header"> Header </header> -->
+  
+    <!--
+        SIDE BAR IZQUIERDO
+      -->
+    <app-side-bar-izq></app-side-bar-izq>
+  
+    <main class="main-content">
+      <div class="nav"></div>
+      <div class="main-encuestas">
+        <h1 class="encuestasTitulo"><b>Actividades Disponibles</b></h1>
+        <div style="text-align: right">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+          <div class="encuesta" *ngFor="
+              let formulario of this.formularioService.actividades
+                | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total }
+            ">
+            <div class="row">
+              <div class="col-8">
+                <h3>{{ formulario.Titulo }}</h3>
+                <p>
+                  {{ formulario.Descripcion }}
+                </p>
+                <a class="date">{{
+                  formulario.FechaVencimiento | date: "dd/MM/yyyy"
+                  }}</a>
+              </div>
+              <div class="col-4 botones">
+                <a class="departamentoEncuesta">{{ formulario.Tipo }}</a>
+                <button type="button" class="btn btnAceptar" [routerLink]="['/respoderEncuesta', formulario.Id]">
+                  Responder
+                </button>
+                <br />
+                <button type="button" class="btn btnCancelar">Ignorar</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+    <!--
+        SIDE BAR DERECHO
+      -->
+    <app-side-bar-der></app-side-bar-der>
+    <!--
+        FOOTER
+       -->
+    <footer class="footer"></footer>
+  </div>

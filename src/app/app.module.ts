@@ -13,6 +13,9 @@ import { CrearActividadComponent } from './crear-actividad/crear-actividad.compo
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ModalAddComponent } from './services/modal-add/modal-add.component';
 import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { EncuestasComponent } from './encuestas/encuestas.component';
+import { ActividadesComponent } from './actividades/actividades.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,15 @@ import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
     CrearActividadComponent,
     ModalAddComponent,
     MisEncuestasComponent,
+    EncuestasComponent,
+    ActividadesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

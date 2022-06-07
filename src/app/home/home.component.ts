@@ -7,8 +7,10 @@ import { FormularioService } from '../services/formulario.service';
 })
 export class HomeComponent implements OnInit {
 
+  p: number = 1;
+  total: number = 0;
   constructor(public formularioService:FormularioService) { }
-  
+
 
   ngOnInit(): void {
     this.formularioService.getFormularios().subscribe((res:any[]) =>{
@@ -16,6 +18,8 @@ export class HomeComponent implements OnInit {
       console.log(this.formularioService.formularios);
     },
     err => console.log(err))
+
+    this.total = this.formularioService.formularios.length;
   }
 
 }
