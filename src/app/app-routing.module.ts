@@ -11,6 +11,8 @@ import { CrearEncuestaComponent } from './crear-encuesta/crear-encuesta.componen
 import { ReponderFormularioComponent } from './reponder-formulario/reponder-formulario.component';
 import { SideBarDerComponent } from './side-bar-der/side-bar-der.component';
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
+import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
+
 
 const routes: Routes = [
   //------------------------------------------
@@ -19,18 +21,20 @@ const routes: Routes = [
 
   //------------------- Home -----------------
   { path: '', component: HomeComponent },
-  
-  { path: '', component: HomeComponent},  
-  {path:'crearEncuesta',component:CrearEncuestaComponent},
-  {path:'respoderEncuesta',component:ReponderFormularioComponent},
+
+  //----------------Responder Encuesta------------
+  {path:'respoderEncuesta/:id',component:ReponderFormularioComponent},
+
   //----------------Crear Encuesta------------
   { path: 'crearEncuesta', component: CrearEncuestaComponent },
 
-  //----------------Crear Encuesta------------
+  //----------------Crear Actividad------------
   { path: 'crearActividad', component: CrearActividadComponent },
 
   //{path: '**', component: 404Component} //por implementar
-
+  
+  //----------------Mis Encuestas------------
+  {path:'misFormularios',component:MisEncuestasComponent},
 
 
   //------------------------------------------

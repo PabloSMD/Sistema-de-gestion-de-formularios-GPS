@@ -1,4 +1,18 @@
-<div class="container mt-3 text-center">
-    <h1>{{this.formularioService.formularios[0].Titulo}}</h1>
-    <iframe src='https://forms.gle/WYZgZ498dgbJFHaa6' width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+<div class="container">
+  <app-side-bar-izq></app-side-bar-izq>
+  <!-- <header class="header"> Header </header> -->
+  <!-- SIDE BAR IZQUIERDO-->
+
+  <main class="main-content">
+    <div class="contenidoCentrado">
+      <h1 style="margin-top:30px">{{this.formularioService.formulario[0].Titulo}}</h1>
+      <iframe src='https://forms.gle/WYZgZ498dgbJFHaa6' width="100%" height="780vh" frameborder="0" marginheight="0"
+      marginwidth="0">Cargando. . .</iframe>
+    </div>
+  </main>
+
+  <!-- SIDE BAR DERECHO -->
+  <app-side-bar-der></app-side-bar-der>
+  <!-- FOOTER -->
+  <footer class="footer"></footer>
 </div>

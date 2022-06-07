@@ -35,13 +35,12 @@
     padding-top: 30px;
     padding-left: 50px;
     padding-right: 50px;
-    height: 91vh;
     grid-area: main;
   }
   .encuestasTitulo {
+  
     padding-bottom: 60px;
   }
-  
   .encuesta{
     background-color: #f3f3f3;
     border-radius: 20px;

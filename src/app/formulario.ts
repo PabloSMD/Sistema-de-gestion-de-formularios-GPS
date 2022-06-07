@@ -6,3 +6,8 @@ export interface IFormlario{
     Titulo:string;
     FechaVencimiento:Date;
 }
+
+export interface IEstado{
+    id:number,
+    estado:string
+}

@@ -2,14 +2,15 @@
   <!-- <header class="header"> Header </header> -->
 
   <!--
-      SIDE BAR IZQUIERDO
-    -->
+        SIDE BAR IZQUIERDO
+        -->
   <app-side-bar-izq></app-side-bar-izq>
 
   <main class="main-content">
     <div class="nav"></div>
     <div class="main-encuestas">
-      <h1 class="encuestasTitulo"><b>Formularios Disponibles</b></h1>
+      <h1 class="encuestasTitulo"><b>Mis Formularios</b></h1>
+      <div class="encuestas">
         <div class="encuesta" *ngFor="let formulario of this.formularioService.formularios">
           <div class="row">
             <div class="col-8">
@@ -21,20 +22,21 @@
             </div>
             <div class="col-4 botones">
               <a class="departamentoEncuesta">{{formulario.Tipo}}</a>
-              <button type="button" class="btn btnAceptar" [routerLink]="['/respoderEncuesta', formulario.Id]">Responder</button>
+              <button type="button" class="btn btnAceptar" routerLink="respoderEncuesta">Editar</button>
               <br />
-              <button type="button" class="btn btnCancelar">Ignorar</button>
+              <button type="button" class="btn btnCancelar" (click)="finalizarEncuesta(formulario.Id)">Finalizar</button>
             </div>
+          </div>
         </div>
       </div>
     </div>
   </main>
   <!--
-      SIDE BAR DERECHO
-    -->
+        SIDE BAR DERECHO
+        -->
   <app-side-bar-der></app-side-bar-der>
   <!--
-      FOOTER
-     -->
+        FOOTER
+        -->
   <footer class="footer"></footer>
 </div>

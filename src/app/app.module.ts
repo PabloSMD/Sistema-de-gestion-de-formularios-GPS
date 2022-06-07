@@ -12,6 +12,7 @@ import { ReponderFormularioComponent } from './reponder-formulario/reponder-form
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ModalAddComponent } from './services/modal-add/modal-add.component';
+import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModalAddComponent } from './services/modal-add/modal-add.component';
     SideBarDerComponent,
     ReponderFormularioComponent,
     CrearActividadComponent,
-    ModalAddComponent
+    ModalAddComponent,
+    MisEncuestasComponent,
   ],
   imports: [
     BrowserModule,
