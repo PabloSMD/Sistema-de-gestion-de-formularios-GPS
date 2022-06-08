@@ -13,6 +13,8 @@ import { SideBarDerComponent } from './side-bar-der/side-bar-der.component';
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
 import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
 import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
+import { EncuestasComponent } from './encuestas/encuestas.component';
+import { ActividadesComponent } from './actividades/actividades.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,12 @@ const routes: Routes = [
 
   //------------------- Home -----------------
   { path: '', component: HomeComponent },
+
+  //------------------- Encuestas -----------------
+  { path: 'encuestas', component: EncuestasComponent },
+
+  //------------------- Actividades -----------------
+  { path: 'actividades', component: ActividadesComponent },
 
   //----------------Responder Encuesta------------
   {path:'respoderEncuesta/:id',component:ReponderFormularioComponent},

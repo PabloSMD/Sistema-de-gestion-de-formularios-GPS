@@ -12,6 +12,7 @@ url = 'http://localhost:3000/formulario';
 
   public formularios:IFormlario[]=[];
   public formulario:any=[];
+  
   public encuestas:IFormlario[]=[];
   public actividades:IFormlario[]=[];
 
