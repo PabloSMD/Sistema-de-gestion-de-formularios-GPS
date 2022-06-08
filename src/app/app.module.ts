@@ -16,6 +16,7 @@ import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ActividadesComponent } from './actividades/actividades.component';
+import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ActividadesComponent } from './actividades/actividades.component';
     MisEncuestasComponent,
     EncuestasComponent,
     ActividadesComponent,
+    EditarEncuestaComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import { CrearActividadComponent } from './crear-actividad/crear-actividad.compo
 import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ActividadesComponent } from './actividades/actividades.component';
+import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,9 @@ const routes: Routes = [
 
   //----------------Responder Encuesta------------
   {path:'respoderEncuesta/:id',component:ReponderFormularioComponent},
+
+  //---------------Editar Encuesta----------------
+  {path:'editarEncuesta/:id',component:EditarEncuestaComponent},
 
   //----------------Crear Encuesta------------
   { path: 'crearEncuesta', component: CrearEncuestaComponent },
