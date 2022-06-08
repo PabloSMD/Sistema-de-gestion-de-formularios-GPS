@@ -13,6 +13,7 @@ import { CrearActividadComponent } from './crear-actividad/crear-actividad.compo
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ModalAddComponent } from './services/modal-add/modal-add.component';
 import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
+import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
     CrearActividadComponent,
     ModalAddComponent,
     MisEncuestasComponent,
+    EditarEncuestaComponent,
   ],
   imports: [
     BrowserModule,
