@@ -9,7 +9,7 @@ import { IEstado } from '../formulario';
 export class MisEncuestasComponent implements OnInit {
 
   constructor(public formularioService:FormularioService) { }
-  
+
   ngOnInit(): void {
     this.formularioService.getFormularios().subscribe((res:any[]) =>{
       this.formularioService.formularios=res;

@@ -22,7 +22,8 @@
             </div>
             <div class="col-4 botones">
               <a class="departamentoEncuesta">{{formulario.Tipo}}</a>
-              <button type="button" class="btn btnAceptar"><a href="/editarEncuesta/id" style="text-decoration: none; color: white;" >Editar </a></button>
+
+              <button type="button" class="btn btnAceptar" ><a routerLink="/editarEncuesta/{{formulario.Id}}" style="text-decoration: none; color: white;" >Editar </a></button>
               <br />
               <button type="button" class="btn btnCancelar" (click)="finalizarEncuesta(formulario.Id)">Finalizar</button>
             </div>

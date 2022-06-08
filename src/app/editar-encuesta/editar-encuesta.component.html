@@ -17,7 +17,7 @@
               A continuación, debe rellenar todos los datos e información
               solicitada para crear su encuesta.
             </div>
-            <form [formGroup]="editformFormulario" id="formulario" (ngSubmit)="editformFormulario.reset" novalidate>
+            <form [formGroup]="editformFormulario" id="formulario" (ngSubmit)="UpdateData()" (ngSubmit)="editformFormulario.reset" novalidate>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Titulo</label>
                 <div class="col-sm-10">
@@ -53,7 +53,7 @@
                 </div>
               </div>
               <div style="padding-left: 340px;" class ="botones">
-                <button type="submit" [disabled]="!editformFormulario.valid" style="    margin-right: 10px;" class="btnAceptar btn">Enviar Solicitud</button>
+                <button type="submit" [disabled]="!editformFormulario.valid" style="margin-right: 10px;" class="btnAceptar btn">Enviar Solicitud</button>
                 <button type="button" class="btn btnCancelar">Cancelar</button>
               </div>
             </form>
