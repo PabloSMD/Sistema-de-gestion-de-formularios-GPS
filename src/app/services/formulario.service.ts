@@ -8,8 +8,8 @@ import { IEstado } from '../formulario';
   providedIn: 'root'
 })
 export class FormularioService {
-url = 'http://localhost:3000/formulario';
 
+ 
   public formularios:IFormlario[]=[];
   public formulario:any=[];
   
@@ -17,7 +17,7 @@ url = 'http://localhost:3000/formulario';
   public actividades:IFormlario[]=[];
 
   constructor(private http:HttpClient) { }
-
+  
   getFormularios():Observable<IFormlario[]>{
     return this.http.get<IFormlario[]>('http://localhost:3000/formularios').pipe(map((res:any) => res.data));
   }
@@ -35,16 +35,8 @@ url = 'http://localhost:3000/formulario';
   cambiarEstadoFormulario(cambioEstado:IEstado){
     return this.http.put<IEstado>('http://localhost:3000/formulario',cambioEstado);
   }
-
+  
   getFormulario(id:string):Observable<IFormlario[]>{
     return this.http.get<IFormlario[]>('http://localhost:3000/formulario/'+id).pipe(map((res:any) => res.data));
-  }
-
-  getFormularioById (id: number) {
-    return this.http.get( `${this.url}/${id}`);
-  }
-
-  updateFormulario (id:number, data:any) {
-    return this.http.put( `${this.url}/${id}`, data);
   }
 }

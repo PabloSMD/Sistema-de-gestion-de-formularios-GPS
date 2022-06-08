@@ -12,9 +12,9 @@ import { ReponderFormularioComponent } from './reponder-formulario/reponder-form
 import { SideBarDerComponent } from './side-bar-der/side-bar-der.component';
 import { CrearActividadComponent } from './crear-actividad/crear-actividad.component';
 import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
-import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ActividadesComponent } from './actividades/actividades.component';
+import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 
 
 const routes: Routes = [
@@ -34,17 +34,17 @@ const routes: Routes = [
   //----------------Responder Encuesta------------
   {path:'respoderEncuesta/:id',component:ReponderFormularioComponent},
 
+  //---------------Editar Encuesta----------------
+  {path:'editarEncuesta/:id',component:EditarEncuestaComponent},
+
   //----------------Crear Encuesta------------
   { path: 'crearEncuesta', component: CrearEncuestaComponent },
-
-//  Editar Encuesta //
-  {path: 'editarEncuesta/:id', component: EditarEncuestaComponent},
 
   //----------------Crear Actividad------------
   { path: 'crearActividad', component: CrearActividadComponent },
 
   //{path: '**', component: 404Component} //por implementar
-
+  
   //----------------Mis Encuestas------------
   {path:'misFormularios',component:MisEncuestasComponent},
 
