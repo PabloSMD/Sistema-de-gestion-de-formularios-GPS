@@ -5,9 +5,25 @@
 
   <main class="main-content">
     <div class="contenidoCentrado">
+
       <h1 style="margin-top:30px">{{this.formularioService.formulario[0].Titulo}}</h1>
-      <iframe src='https://forms.gle/WYZgZ498dgbJFHaa6' width="100%" height="780vh" frameborder="0" marginheight="0"
+      <p>
+        {{this.formularioService.formulario[0].Descripcion}}
+      </p>
+
+      <iframe src='https://forms.gle/WYZgZ498dgbJFHaa6' width="100%" height="650vh" frameborder="0" marginheight="0"
       marginwidth="0">Cargando. . .</iframe>
+
+      <p>
+        Una vez hayas Enviado tus respuestas en el formulario, presiona el botón "Ya he respondido"
+      </p>
+
+      <div>
+        <button type="button" class="btn btnAceptar"> Ya he respondido</button>
+        <button type="button" class="btn btnCancelar" routerLink="/"> Volver</button>
+      </div>
+
+
     </div>
   </main>
 
