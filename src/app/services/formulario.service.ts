@@ -15,6 +15,7 @@ export class FormularioService {
   
   public encuestas:IFormlario[]=[];
   public actividades:IFormlario[]=[];
+  public misFormularios:IFormlario[]=[];
 
   constructor(private http:HttpClient) { }
   
@@ -26,6 +27,9 @@ export class FormularioService {
   }
   getActividades():Observable<IFormlario[]>{
     return this.http.get<IFormlario[]>('http://localhost:3000/actividades').pipe(map((res:any) => res.data));
+  }
+  getMisFormularios():Observable<IFormlario[]>{
+    return this.http.get<IFormlario[]>('http://localhost:3000/misFormularios').pipe(map((res:any) => res.data));
   }
 
   saveFormulario(formulario:IFormlario){

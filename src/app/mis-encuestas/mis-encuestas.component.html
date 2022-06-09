@@ -11,7 +11,7 @@
     <div class="main-encuestas">
       <h1 class="encuestasTitulo"><b>Mis Formularios</b></h1>
       <div class="encuestas">
-        <div class="encuesta" *ngFor="let formulario of this.formularioService.formularios">
+        <div [ngClass]="formulario.estado == 'DISPONIBLE' ? 'encuesta' : 'encuestaFinalizada'" *ngFor="let formulario of this.formularioService.misFormularios">
           <div class="row">
             <div class="col-8">
               <h3>{{formulario.Titulo}}</h3>
@@ -22,9 +22,9 @@
             </div>
             <div class="col-4 botones">
               <a class="departamentoEncuesta">{{formulario.Tipo}}</a>
-              <button type="button" class="btn btnAceptar" [routerLink]="['/editarEncuesta', formulario.Id]">Editar</button>
+              <button *ngIf="formulario.estado=='DISPONIBLE'" type="button" class="btn btnAceptar" [routerLink]="['/editarEncuesta', formulario.Id]">Editar</button>
               <br />
-              <button type="button" class="btn btnCancelar" (click)="finalizarEncuesta(formulario.Id)">Finalizar</button>
+              <button *ngIf="formulario.estado=='DISPONIBLE'" type="button" class="btn btnCancelar" (click)="finalizarEncuesta(formulario.Id)">Finalizar</button>
             </div>
           </div>
         </div>
