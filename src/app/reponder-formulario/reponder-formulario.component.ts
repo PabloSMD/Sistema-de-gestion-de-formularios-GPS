@@ -14,12 +14,6 @@ export class ReponderFormularioComponent implements OnInit {
   id: any = "";
 
   ngOnInit(): void {
-    this.formularioService.getFormularios().subscribe((res:any[]) =>{
-      this.formularioService.formularios=res;
-      console.log(this.formularioService.formularios);
-    },
-    err => console.log(err))
-    
     this.formularioService.getFormulario(this.getId()).subscribe((res:any[]) =>{
       this.formularioService.formulario=res;
       console.log(this.formularioService.formulario);

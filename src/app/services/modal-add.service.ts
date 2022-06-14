@@ -8,6 +8,7 @@ export class ModalAddService {
 
   public oculto:string="";
   public aceptado:boolean=false;
+  public mensaje:string="";
   constructor() { }
 
   ocultarModal(){
@@ -18,4 +19,9 @@ export class ModalAddService {
     this.oculto="block";
     console.log('mostrarModal');
   }
+  setMensaje(cambio:string){
+    this.mensaje=cambio;
+  }
+  
+
 }

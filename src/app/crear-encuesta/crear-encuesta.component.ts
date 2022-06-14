@@ -25,7 +25,9 @@ export class CrearEncuestaComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.modaladdService.setMensaje("Desea Guardar esta Encuesta?");
+  }
 
   abrirModal(){
     this.modaladdService.mostrarModal();

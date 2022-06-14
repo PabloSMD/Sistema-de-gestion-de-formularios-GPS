@@ -17,6 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
+import { SafePipe } from './pipe/safePipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.compo
     EncuestasComponent,
     ActividadesComponent,
     EditarEncuestaComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
