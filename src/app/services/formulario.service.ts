@@ -31,7 +31,6 @@ export class FormularioService {
   getMisFormularios():Observable<IFormlario[]>{
     return this.http.get<IFormlario[]>('http://localhost:3000/misFormularios').pipe(map((res:any) => res.data));
   }
-
   saveFormulario(formulario:IFormlario){
     return this.http.post<IFormlario[]>('http://localhost:3000/formulario',formulario);
   }
@@ -42,5 +41,8 @@ export class FormularioService {
   
   getFormulario(id:string):Observable<IFormlario[]>{
     return this.http.get<IFormlario[]>('http://localhost:3000/formulario/'+id).pipe(map((res:any) => res.data));
+  }
+  editarFormulario(id:string,formulario:any){
+    return this.http.put<IFormlario>('http://localhost:3000/actualizarFormulario/'+id,formulario);
   }
 }

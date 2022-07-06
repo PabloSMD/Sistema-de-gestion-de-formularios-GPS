@@ -11,7 +11,7 @@ export class MisEncuestasComponent implements OnInit {
   constructor(public formularioService:FormularioService) { }
   
   ngOnInit(): void {
-    this.formularioService.getMisFormularios().subscribe((res:any[]) =>{
+    this.formularioService.getFormularios().subscribe((res:any[]) =>{
       this.formularioService.misFormularios=res;
       console.log(this.formularioService.misFormularios);
     },

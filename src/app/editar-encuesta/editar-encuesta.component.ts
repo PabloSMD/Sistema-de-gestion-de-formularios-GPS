@@ -30,6 +30,7 @@ export class EditarEncuestaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.modaladdService.setMensaje("Se Edito el Formulario con exito!!")
     this.formularioService.getFormulario(this.getId()).subscribe((res:any[]) =>{
       this.formularioService.formulario=res;
       console.log(this.formularioService.formulario);
@@ -57,8 +58,8 @@ export class EditarEncuestaComponent implements OnInit {
     this.EditarFormulario(formulario);
   }
 
-  EditarFormulario(formulario:IFormlario){
-    this.formularioService.saveFormulario(formulario).subscribe(() => {
+  EditarFormulario(formulario:any){
+    this.formularioService.editarFormulario(this.id,formulario).subscribe(() => {
       return this.formularioService.getFormularios().subscribe((res:any[])=>{
         this.formularioService.formularios=res
       },
