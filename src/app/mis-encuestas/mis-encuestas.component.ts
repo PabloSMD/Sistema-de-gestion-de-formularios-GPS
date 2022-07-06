@@ -7,7 +7,8 @@ import { IEstado } from '../formulario';
   styleUrls: ['./mis-encuestas.component.css']
 })
 export class MisEncuestasComponent implements OnInit {
-
+  p: number = 1;
+  total: number = 0;
   constructor(public formularioService:FormularioService) { }
   
   ngOnInit(): void {

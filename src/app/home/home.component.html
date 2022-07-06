@@ -11,7 +11,8 @@
     <div class="main-encuestas">
       <h1 class="encuestasTitulo"><b>Formularios Disponibles</b></h1>
       <div style="text-align: right">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <pagination-controls previousLabel="Anterior"
+        nextLabel="Siguiente" (pageChange)="p = $event"></pagination-controls>
       </div>
         <div class="encuesta" *ngFor="
             let formulario of this.formularioService.formularios

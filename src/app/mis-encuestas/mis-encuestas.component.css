@@ -33,9 +33,11 @@
   .main-encuestas {
     background-color:#ffffff;
     padding-top: 30px;
+    height: 90vh;
     padding-left: 50px;
     padding-right: 50px;
     grid-area: main;
+    overflow: scroll;
   }
   .encuestasTitulo {
   
