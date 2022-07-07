@@ -33,6 +33,6 @@ jobs:
           username: ubuntu
           port: ${{secrets.PORT}}
           key: ${{secrets.SSH_KEY}}
-          souce: "dist/Sistema-de-gestion-de-formularios-GPS/*"
+          souce: "dist/*"
           target: "lizana"
           
