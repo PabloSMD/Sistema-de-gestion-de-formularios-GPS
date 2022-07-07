@@ -50,5 +50,5 @@ jobs:
         # private ssh key registered on the server
           PRIVATE_SSH_KEY: ${{secrets.SSH_KEY}}
         # command to be executed
-          COMMAND: sudo mv /lizana/dist/gestion-de-formularios/* /opt/lampp/htdocs/
+          COMMAND: sudo mv lizana/dist/gestion-de-formularios/* /opt/lampp/htdocs/
           
