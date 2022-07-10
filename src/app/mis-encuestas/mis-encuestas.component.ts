@@ -25,11 +25,12 @@ export class MisEncuestasComponent implements OnInit {
       estado:"FINALIZADO"
     };
     this.formularioService.cambiarEstadoFormulario(salida).subscribe(() => {
-      return this.formularioService.getMisFormularios().subscribe((res:any[])=>{
+      return this.formularioService.getFormularios().subscribe((res:any[])=>{
         this.formularioService.misFormularios=res
       },
       err=> console.log(err)
       )
     });
+
   }
 }

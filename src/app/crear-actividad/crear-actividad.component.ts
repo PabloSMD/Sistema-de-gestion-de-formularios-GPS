@@ -27,7 +27,7 @@ export class CrearActividadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.modaladdService.setMensaje("Desea Guardar esta Actividad?");
+    this.modaladdService.setMensaje("Actividad Guardada Con Exito!!!");
   }
 
   abrirModal(){
