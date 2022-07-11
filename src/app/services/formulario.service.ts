@@ -20,29 +20,29 @@ export class FormularioService {
   constructor(private http:HttpClient) { }
   
   getFormularios():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://localhost:5000/formularios').pipe(map((res:any) => res.data));
+    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/formularios').pipe(map((res:any) => res.data));
   }
   getEncuestas():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://localhost:5000/encuestas').pipe(map((res:any) => res.data));
+    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/encuestas').pipe(map((res:any) => res.data));
   }
   getActividades():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://localhost:5000/actividades').pipe(map((res:any) => res.data));
+    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/actividades').pipe(map((res:any) => res.data));
   }
   getMisFormularios():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://localhost:5000/misFormularios').pipe(map((res:any) => res.data));
+    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/misFormularios').pipe(map((res:any) => res.data));
   }
   saveFormulario(formulario:IFormlario){
-    return this.http.post<IFormlario[]>('http://localhost:5000/formulario',formulario);
+    return this.http.post<IFormlario[]>('http://34.204.7.108:5000/formulario',formulario);
   }
 
   cambiarEstadoFormulario(cambioEstado:IEstado){
-    return this.http.put<IEstado>('http://localhost:5000/formulario',cambioEstado);
+    return this.http.put<IEstado>('http://34.204.7.108:5000/formulario',cambioEstado);
   }
   
   getFormulario(id:string):Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://localhost:5000/formulario/'+id).pipe(map((res:any) => res.data));
+    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/formulario/'+id).pipe(map((res:any) => res.data));
   }
   editarFormulario(id:string,formulario:any){
-    return this.http.put<IFormlario>('http://localhost:5000/actualizarFormulario/'+id,formulario);
+    return this.http.put<IFormlario>('http://34.204.7.108:5000/actualizarFormulario/'+id,formulario);
   }
 }
