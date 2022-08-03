@@ -15,15 +15,16 @@ import { MisEncuestasComponent } from './mis-encuestas/mis-encuestas.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   //------------------------------------------
   //------------- Routing Interno ------------
   //------------------------------------------
-
+  { path: '', component: LoginComponent },
   //------------------- Home -----------------
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
 
   //------------------- Encuestas -----------------
   { path: 'encuestas', component: EncuestasComponent },

@@ -18,6 +18,7 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 import { SafePipe } from './pipe/safePipe';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SafePipe } from './pipe/safePipe';
     EncuestasComponent,
     ActividadesComponent,
     EditarEncuestaComponent,
-    SafePipe
+    SafePipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -22,9 +22,10 @@
     <a> Correo: ignacio@ubiobio.cl</a> <br />
     <a>Rut: 20.111.540-K</a> <br />
     <a> Carrera: Ing.Civíl Informática </a>
+    <br>
+    <button type="submit" class="btn btn-danger" (click)="this.loginService.logout()">Cerrar Sesision</button>
   </div>
   <div class="plataformas">
-    <br />
     <a> <b style="font-size: 20px">Plataformas </b></a> <br />
     <button type="button" class="btnPlataformas btn" routerLink="/intranet">Intranet</button>
     <button type="button" class="btnPlataformas btn" routerLink="/moodle">Moodle</button> <br />
