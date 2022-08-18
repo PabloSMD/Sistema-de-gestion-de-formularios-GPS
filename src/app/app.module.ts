@@ -20,6 +20,8 @@ import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.compo
 import { SafePipe } from './pipe/safePipe';
 import { LoginComponent } from './login/login.component';
 import {CookieService} from 'ngx-cookie-service';
+import { SidebarIzqAdminComponent } from './sidebar-izq-admin/sidebar-izq-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {CookieService} from 'ngx-cookie-service';
     ActividadesComponent,
     EditarEncuestaComponent,
     SafePipe,
-    LoginComponent
+    LoginComponent,
+    SidebarIzqAdminComponent
   ],
   imports: [
     BrowserModule,
