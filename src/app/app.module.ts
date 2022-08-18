@@ -19,6 +19,7 @@ import { ActividadesComponent } from './actividades/actividades.component';
 import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 import { SafePipe } from './pipe/safePipe';
 import { LoginComponent } from './login/login.component';
+import { SidebarIzqAdminComponent } from './sidebar-izq-admin/sidebar-izq-admin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LoginComponent } from './login/login.component';
     ActividadesComponent,
     EditarEncuestaComponent,
     SafePipe,
-    LoginComponent
+    LoginComponent,
+    SidebarIzqAdminComponent
   ],
   imports: [
     BrowserModule,

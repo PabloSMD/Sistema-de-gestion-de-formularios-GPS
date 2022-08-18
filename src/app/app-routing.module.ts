@@ -45,7 +45,7 @@ const routes: Routes = [
   { path: 'crearActividad', component: CrearActividadComponent },
 
   //{path: '**', component: 404Component} //por implementar
-  
+
   //----------------Mis Encuestas------------
   {path:'misFormularios',component:MisEncuestasComponent},
 
