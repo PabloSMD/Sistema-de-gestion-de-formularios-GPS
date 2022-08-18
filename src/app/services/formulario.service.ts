@@ -12,37 +12,40 @@ export class FormularioService {
  
   public formularios:IFormlario[]=[];
   public formulario:any=[];
-  
+  public enlace:string="localhost";
   public encuestas:IFormlario[]=[];
   public actividades:IFormlario[]=[];
   public misFormularios:IFormlario[]=[];
 
   constructor(private http:HttpClient) { }
   
-  getFormularios():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/formularios').pipe(map((res:any) => res.data));
+  getFormularios(carrera:string,sexo:string):Observable<IFormlario[]>{
+    const parametros={carrera:carrera,sexo:sexo};
+    return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/formularios',parametros).pipe(map((res:any) => res.data));
   }
-  getEncuestas():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/encuestas').pipe(map((res:any) => res.data));
+  getEncuestas(carrera:string,sexo:string):Observable<IFormlario[]>{
+    const parametros={carrera:carrera,sexo:sexo};
+    return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/encuestas',parametros).pipe(map((res:any) => res.data));
   }
-  getActividades():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/actividades').pipe(map((res:any) => res.data));
+  getActividades(carrera:string,sexo:string):Observable<IFormlario[]>{
+    const parametros={carrera:carrera,sexo:sexo};
+    return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/actividades',parametros).pipe(map((res:any) => res.data));
   }
-  getMisFormularios():Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/misFormularios').pipe(map((res:any) => res.data));
+  getMisFormularios(id:string):Observable<IFormlario[]>{
+    return this.http.get<IFormlario[]>('http://'+this.enlace+':5000/misFormularios/'+id).pipe(map((res:any) => res.data));
   }
   saveFormulario(formulario:IFormlario){
-    return this.http.post<IFormlario[]>('http://34.204.7.108:5000/formulario',formulario);
+    return this.http.post<IFormlario[]>('http://'+this.enlace+'/formulario',formulario);
   }
 
   cambiarEstadoFormulario(cambioEstado:IEstado){
-    return this.http.put<IEstado>('http://34.204.7.108:5000/formulario',cambioEstado);
+    return this.http.put<IEstado>('http://'+this.enlace+'/formulario',cambioEstado);
   }
   
   getFormulario(id:string):Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://34.204.7.108:5000/formulario/'+id).pipe(map((res:any) => res.data));
+    return this.http.get<IFormlario[]>('http://'+this.enlace+'/formulario/'+id).pipe(map((res:any) => res.data));
   }
   editarFormulario(id:string,formulario:any){
-    return this.http.put<IFormlario>('http://34.204.7.108:5000/actualizarFormulario/'+id,formulario);
+    return this.http.put<IFormlario>('http://'+this.enlace+'/actualizarFormulario/'+id,formulario);
   }
 }

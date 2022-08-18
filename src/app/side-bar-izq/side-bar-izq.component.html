@@ -1,10 +1,10 @@
 <aside class="side-bar">
-  <img class="logoUbb" src="../assets/Escudo color gradiente 2.png" routerLink="/" />
+  <img class="logoUbb" src="../assets/Escudo color gradiente 2.png" routerLink="/home" />
 
   <div class="row" id="body-row">
     <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
       <ul class="list-group">
-        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
+        <a routerLink='/encuestas' href="#submenu1" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
           class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="menu-collapsed" style="color: black">Encuestas Disponibles</span>
@@ -25,7 +25,7 @@
             <span class="menu-collapsed" style="color: gray">Ver Todo</span>
           </a>
         </div>
-        <a href="#submenu2" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
+        <a href="#submenu2" routerLink='/actividades' data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
           class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="menu-collapsed" style="color: black">Actividades Disponibles</span>
@@ -51,7 +51,7 @@
             <span class="menu-collapsed" style="color: gray">Ver Todo</span>
           </a>
         </div>
-        <a href="#submenu3" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
+        <a routerLink="/misFormularios" href="#submenu3" data-toggle="collapse" aria-expanded="false" style="width: 300px; background-color: #cbdcf8"
           class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="menu-collapsed" style="color: black">Mis Formularios</span>

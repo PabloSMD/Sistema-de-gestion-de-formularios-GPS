@@ -48,7 +48,7 @@ export class CrearActividadComponent implements OnInit {
 
   guardarFormulario(formulario:IFormlario){
     this.formularioService.saveFormulario(formulario).subscribe(() => {
-      return this.formularioService.getFormularios().subscribe((res:any[])=>{
+      return this.formularioService.getFormularios("Ingenieria Civil Informatica","masculino").subscribe((res:any[])=>{
         this.formularioService.formularios=res
       },
       err=> console.log(err)

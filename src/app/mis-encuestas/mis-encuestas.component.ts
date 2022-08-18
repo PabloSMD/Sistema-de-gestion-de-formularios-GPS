@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormularioService } from '../services/formulario.service';
 import { IEstado } from '../formulario';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-mis-encuestas',
   templateUrl: './mis-encuestas.component.html',
@@ -9,10 +10,12 @@ import { IEstado } from '../formulario';
 export class MisEncuestasComponent implements OnInit {
   p: number = 1;
   total: number = 0;
-  constructor(public formularioService:FormularioService) { }
+  constructor(public formularioService:FormularioService,private cookie:CookieService) { }
   
   ngOnInit(): void {
-    this.formularioService.getFormularios().subscribe((res:any[]) =>{
+    let id=this.cookie.get('id_usuario');
+    console.log(id);
+    this.formularioService.getMisFormularios(id).subscribe((res:any[]) =>{
       this.formularioService.misFormularios=res;
       console.log(this.formularioService.misFormularios);
     },
@@ -25,7 +28,7 @@ export class MisEncuestasComponent implements OnInit {
       estado:"FINALIZADO"
     };
     this.formularioService.cambiarEstadoFormulario(salida).subscribe(() => {
-      return this.formularioService.getFormularios().subscribe((res:any[])=>{
+      return this.formularioService.getFormularios("Ingenieria Civil Informatica","masculino").subscribe((res:any[])=>{
         this.formularioService.misFormularios=res
       },
       err=> console.log(err)

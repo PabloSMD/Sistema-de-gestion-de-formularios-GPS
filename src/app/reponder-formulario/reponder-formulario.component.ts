@@ -26,6 +26,6 @@ export class ReponderFormularioComponent implements OnInit {
     return this.id;
   }
 
-  url=this.formularioService.formularios[0].Url;
+  url=this.formularioService.formularios[0].url;
   
 }

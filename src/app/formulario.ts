@@ -1,11 +1,14 @@
 export interface IFormlario{
-    Id:number;
-    Descripcion:string;
-    Url:string;
-    Tipo:string;
-    Titulo:string;
-    FechaVencimiento:Date;
+    id:number;
+    titulo:string;
+    descripcion:string;
+    url:string;
+    tipo_formulario:string;
+    subtipo_formulario:string;
     estado:string;
+    sexo_dirigido:string;
+    fecha_vencimiento:Date;
+    id_usuario:number;
 }
 
 export interface IEstado{
@@ -18,4 +21,7 @@ export interface IUsuario{
     nombre:string;
     correo:string;
     password:string;
+    rol:string;
+    sexo:string;
+    carrera:string;
 }

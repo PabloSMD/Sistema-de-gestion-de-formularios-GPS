@@ -18,17 +18,17 @@
         <div [ngClass]="formulario.estado == 'DISPONIBLE' ? 'encuesta' : 'encuestaFinalizada'" *ngFor="let formulario of this.formularioService.misFormularios | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total }">
           <div class="row">
             <div class="col-8">
-              <h3>{{formulario.Titulo}}</h3>
+              <h3>{{formulario.titulo}}</h3>
               <p>
-                {{formulario.Descripcion}}
+                {{formulario.descripcion}}
               </p>
-              <a class="date">{{formulario.FechaVencimiento| date:'dd/MM/yyyy'}}</a>
+              <a class="date">{{formulario.fecha_vencimiento| date:'dd/MM/yyyy'}}</a>
             </div>
             <div class="col-4 botones">
-              <a class="departamentoEncuesta">{{formulario.Tipo}}</a>
-              <button *ngIf="formulario.estado=='DISPONIBLE'" type="button" class="btn btnAceptar" [routerLink]="['/editarEncuesta', formulario.Id]">Editar</button>
+              <a class="departamentoEncuesta">{{formulario.tipo_formulario}}</a>
+              <button *ngIf="formulario.estado=='DISPONIBLE'" type="button" class="btn btnAceptar" [routerLink]="['/editarEncuesta', formulario.id]">Editar</button>
               <br />
-              <button *ngIf="formulario.estado=='DISPONIBLE'" type="button" class="btn btnCancelar" (click)="finalizarEncuesta(formulario.Id)">Finalizar</button>
+              <button *ngIf="formulario.estado=='DISPONIBLE'" type="button" class="btn btnCancelar" (click)="finalizarEncuesta(formulario.id)">Finalizar</button>
             </div>
           </div>
         </div>
