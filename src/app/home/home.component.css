@@ -32,12 +32,13 @@
   }
   .main-encuestas {
     background-color:#ffffff;
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 90vh;
+    margin-top: 30px;
+    margin-left: 62px;
+    margin-right: 62px;
+    height: 85vh;
     grid-area: main;
-    overflow: scroll;
+    /* overflow: scroll; */
+    /* overflow-y: visible; */
   }
   .encuestasTitulo {
     padding-bottom: 25px;
@@ -96,6 +97,7 @@
   .footer {
     background-color:#4a78c4;
     grid-area: footer;
+    z-index: 1;
   }
   .side-bar2 {
     background-color:#eaf2ff;
