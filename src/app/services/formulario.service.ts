@@ -35,17 +35,17 @@ export class FormularioService {
     return this.http.get<IFormlario[]>('http://'+this.enlace+':5000/misFormularios/'+id).pipe(map((res:any) => res.data));
   }
   saveFormulario(formulario:IFormlario){
-    return this.http.post<IFormlario[]>('http://'+this.enlace+'/formulario',formulario);
+    return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/formulario',formulario);
   }
 
   cambiarEstadoFormulario(cambioEstado:IEstado){
-    return this.http.put<IEstado>('http://'+this.enlace+'/formulario',cambioEstado);
+    return this.http.put<IEstado>('http://'+this.enlace+':5000/formulario',cambioEstado);
   }
   
   getFormulario(id:string):Observable<IFormlario[]>{
-    return this.http.get<IFormlario[]>('http://'+this.enlace+'/formulario/'+id).pipe(map((res:any) => res.data));
+    return this.http.get<IFormlario[]>('http://'+this.enlace+':5000/formulario/'+id).pipe(map((res:any) => res.data));
   }
   editarFormulario(id:string,formulario:any){
-    return this.http.put<IFormlario>('http://'+this.enlace+'/actualizarFormulario/'+id,formulario);
+    return this.http.put<IFormlario>('http://'+this.enlace+':5000/actualizarFormulario/'+id,formulario);
   }
 }

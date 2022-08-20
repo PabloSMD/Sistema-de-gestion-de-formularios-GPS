@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { IFormlario } from '../formulario';
 import { FormularioService } from '../services/formulario.service';
 import { ModalAddService } from '../services/modal-add.service';
@@ -14,14 +15,17 @@ export class CrearEncuestaComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private formularioService: FormularioService,
-    private modaladdService:ModalAddService
+    private modaladdService:ModalAddService,
+    private cookie:CookieService
   ) {
     this.formFormulario = this.formBuilder.group({
       descripcion: ['', [Validators.required]],
       url: ['', [Validators.required]],
-      tipo: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
-      fechavencimiento: ['', [Validators.required]],
+      fecha_vencimiento: ['', [Validators.required]],
+      sub_tipo:['',[Validators.required]],
+      sexo_dirigido:['',[Validators.required]],
+      carrera:['',[Validators.required]]
     });
   }
 
@@ -36,24 +40,36 @@ export class CrearEncuestaComponent implements OnInit {
   saveData() {
     this.abrirModal();
     let formulario:any={
+      titulo:this.formFormulario.value.titulo,
       descripcion:this.formFormulario.value.descripcion,
       url:this.formFormulario.value.url,
-      tipo:this.formFormulario.value.tipo,
-      titulo:this.formFormulario.value.titulo,
-      fechavencimiento:this.formFormulario.value.fechavencimiento,
-      estado:"DISPONIBLE"
+      tipo_formulario:"Encuesta",
+      subtipo_formulario:this.formFormulario.value.sub_tipo,
+      estado:"DISPONIBLE",
+      carrera:this.formFormulario.value.carrera,
+      fecha_vencimiento:this.formFormulario.value.fecha_vencimiento,
+      id_usuario:this.cookie.get('id_usuario')
     }
     this.guardarFormulario(formulario);
   }
 
-  guardarFormulario(formulario:IFormlario){
-    this.formularioService.saveFormulario(formulario).subscribe(() => {
-      return this.formularioService.getFormularios("Ingenieria Civil Informatica","masculino").subscribe((res:any[])=>{
-        this.formularioService.formularios=res
-      },
-      err=> console.log(err)
-      )
+  guardarFormulario(formulario:any){
+    this.formularioService.saveFormulario(formulario).subscribe(() => {   
     });
     this.formFormulario.reset();
   }
+  public carreras:Array<string>=[
+    "Todas",
+    'Diseño Gráfico',
+    "Contador Público y Auditor",
+    "Ingeniería Civil en Informática",
+    "Ingeniería Comercial",
+    "Pedagogía en Educación Física",
+    "Psicología",
+    "Enfermería",
+    "Fonoaudiología",
+    "Ingeniería en Alimentos",
+    "Ingeniería en Recursos Naturales",
+    "Nutrición y Dietética"
+  ]
 }
