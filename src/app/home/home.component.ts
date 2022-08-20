@@ -11,7 +11,7 @@ import { UsuarioService } from '../services/usuario.service';
 export class HomeComponent implements OnInit {
 
   p: number = 1;
-  a: any;
+
   total: number = 0;
   _listFilter: string="";
 
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
   performFilter(filterBy:string) : IFormlario[]{
     filterBy = filterBy.toLocaleLowerCase();
     return this.formularioService.formularios.filter((form:IFormlario) => 
-    form.titulo.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    form.titulo.toLocaleLowerCase().indexOf(filterBy) !== -1 || form.subtipo_formulario.toLocaleLowerCase().indexOf(filterBy) !== -1);
     //retornar nuevo arreglo filtrado
   }
 

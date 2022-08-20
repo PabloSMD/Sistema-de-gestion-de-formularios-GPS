@@ -74,4 +74,12 @@ export class CrearActividadComponent implements OnInit {
     "Ingeniería en Recursos Naturales",
     "Nutrición y Dietética"
   ]
+
+  public actividades:Array<string>=[
+    "Charla",
+    'Seminario',
+    "Conversatorio",
+    "Concurso",
+    "Curso",
+  ]
 }

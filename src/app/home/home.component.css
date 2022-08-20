@@ -37,9 +37,11 @@
     margin-right: 62px;
     height: 85vh;
     grid-area: main;
-    /* overflow: scroll; */
-    /* overflow-y: visible; */
+     overflow-y: scroll; 
+     overflow-x: hidden; 
   }
+
+
   .encuestasTitulo {
     padding-bottom: 25px;
   }

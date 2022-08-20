@@ -12,10 +12,16 @@ export class FormularioService {
  
   public formularios:IFormlario[]=[];
   public filteredForms: IFormlario[] =[];
+
   public formulario:any=[];
   public enlace:string="localhost";
+
   public encuestas:IFormlario[]=[];
+  public filteredEncuestas:IFormlario[]=[];
+
   public actividades:IFormlario[]=[];
+  public filteredActividades:IFormlario[]=[];
+  
   public misFormularios:IFormlario[]=[];
 
   constructor(private http:HttpClient) { }

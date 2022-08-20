@@ -10,12 +10,15 @@
       <div class="nav"></div>
       <div class="main-encuestas">
         <h1 class="encuestasTitulo"><b>Encuestas Disponibles</b></h1>
+
+        Buscar: <input type="text" [(ngModel)]="listFilter"/> <i class="fa fa-search" aria-hidden="true" style="margin-left: 5px;"></i>
+
         <div style="text-align: right">
           <pagination-controls previousLabel="Anterior"
           nextLabel="Siguiente" (pageChange)="p = $event"></pagination-controls>
         </div>
           <div class="encuesta" *ngFor="
-              let formulario of this.formularioService.encuestas
+              let formulario of this.formularioService.filteredEncuestas
                 | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total }
             ">
             <div class="row">

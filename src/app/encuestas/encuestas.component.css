@@ -37,7 +37,8 @@
     padding-right: 50px;
     height: 90vh;
     grid-area: main;
-    overflow: scroll;
+    overflow-y: scroll; 
+    overflow-x: hidden; 
   }
   .encuestasTitulo {
     padding-bottom: 25px;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { IFormlario } from '../formulario';
 import { FormularioService } from '../services/formulario.service';
 import { UsuarioService } from '../services/usuario.service';
 
@@ -9,8 +10,14 @@ import { UsuarioService } from '../services/usuario.service';
   styleUrls: ['./encuestas.component.css']
 })
 export class EncuestasComponent implements OnInit {
+
   p: number = 1;
+
   total: number = 0;
+  _listFilter: string="";
+
+  filteredEncuestas: IFormlario[]=[];
+
   constructor(public formularioService:FormularioService,private cookie:CookieService,private usuarioService:UsuarioService) { }
 
   ngOnInit(): void {
@@ -21,6 +28,7 @@ export class EncuestasComponent implements OnInit {
       let sexo=this.usuarioService.usuario[0].sexo;
       this.formularioService.getEncuestas(carrera,sexo).subscribe((res:any[]) =>{
         this.formularioService.encuestas=res;
+        this.formularioService.filteredEncuestas=res;
         console.log(this.formularioService.encuestas);
       },
       err => console.log(err))
@@ -29,5 +37,21 @@ export class EncuestasComponent implements OnInit {
     (err: any) => console.log(err))
   }
 
+  get listFilter(): string{
+    return this._listFilter;
+  }
+
+  set listFilter(value: string){
+    this._listFilter = value;
+    this.formularioService.filteredEncuestas = 
+      this.listFilter? this.performFilter(this.listFilter) : this.formularioService.encuestas;
+  }
+  
+  performFilter(filterBy:string) : IFormlario[]{
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.formularioService.encuestas.filter((enc:IFormlario) => 
+    enc.titulo.toLocaleLowerCase().indexOf(filterBy) !== -1 || enc.subtipo_formulario.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    //retornar nuevo arreglo filtrado
+  }
 
 }
