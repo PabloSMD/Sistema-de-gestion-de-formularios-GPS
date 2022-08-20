@@ -28,11 +28,6 @@ export class MisEncuestasComponent implements OnInit {
       estado:"FINALIZADO"
     };
     this.formularioService.cambiarEstadoFormulario(salida).subscribe(() => {
-      return this.formularioService.getFormularios("Ingenieria Civil Informatica","masculino").subscribe((res:any[])=>{
-        this.formularioService.misFormularios=res
-      },
-      err=> console.log(err)
-      )
     });
 
   }

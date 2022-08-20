@@ -13,7 +13,6 @@ export class ModalAddComponent implements OnInit {
   ngOnInit(): void {
   }
   ocultarModal(){
-    this.router.navigate(['home']);
     this.modaladdService.ocultarModal();
   }
 }

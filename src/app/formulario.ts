@@ -8,7 +8,7 @@ export interface IFormlario{
     estado:string;
     sexo_dirigido:string;
     fecha_vencimiento:Date;
-    id_usuario:number;
+    id_usuario:string;
 }
 
 export interface IEstado{
@@ -24,4 +24,9 @@ export interface IUsuario{
     rol:string;
     sexo:string;
     carrera:string;
+}
+
+export interface IRespuesta{
+    id_usuario:string,
+    id_formulario:string
 }

@@ -46,14 +46,15 @@ export class CrearEncuestaComponent implements OnInit {
       tipo_formulario:"Encuesta",
       subtipo_formulario:this.formFormulario.value.sub_tipo,
       estado:"DISPONIBLE",
-      carrera:this.formFormulario.value.carrera,
+      sexo_dirigido:this.formFormulario.value.sexo_dirigido,
+      carrera_dirigida:this.formFormulario.value.carrera,
       fecha_vencimiento:this.formFormulario.value.fecha_vencimiento,
       id_usuario:this.cookie.get('id_usuario')
     }
     this.guardarFormulario(formulario);
   }
 
-  guardarFormulario(formulario:any){
+  guardarFormulario(formulario:IFormlario){
     this.formularioService.saveFormulario(formulario).subscribe(() => {   
     });
     this.formFormulario.reset();

@@ -36,7 +36,7 @@ export class FormularioService {
     return this.http.get<IFormlario[]>('http://'+this.enlace+':5000/misFormularios/'+id).pipe(map((res:any) => res.data));
   }
   saveFormulario(formulario:IFormlario){
-    return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/formulario',formulario);
+    return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/ingresarformulario',formulario);
   }
 
   cambiarEstadoFormulario(cambioEstado:IEstado){
