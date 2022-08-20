@@ -46,7 +46,8 @@ import { SidebarIzqAdminComponent } from './sidebar-izq-admin/sidebar-izq-admin.
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

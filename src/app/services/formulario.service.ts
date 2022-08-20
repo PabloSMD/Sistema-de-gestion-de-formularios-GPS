@@ -11,6 +11,7 @@ export class FormularioService {
 
  
   public formularios:IFormlario[]=[];
+  public filteredForms: IFormlario[] =[];
   public formulario:any=[];
   public enlace:string="localhost";
   public encuestas:IFormlario[]=[];
