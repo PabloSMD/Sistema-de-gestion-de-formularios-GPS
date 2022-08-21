@@ -6,7 +6,7 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  public enlace:string="34.204.7.108";
+  public enlace:string="54.209.153.70";
   constructor(private http:HttpClient) { }
   public usuario:any={};
   getUsuario(id:string):Observable<IUsuario>{

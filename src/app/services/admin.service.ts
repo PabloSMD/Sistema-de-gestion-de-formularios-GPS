@@ -12,7 +12,7 @@ export class AdminService {
   public encuesta:any=[];
   public actividad:any=[];
   public respuesta:any=[];
-  public enlace:string="34.204.7.108";
+  public enlace:string="54.209.153.70";
 
   constructor(private http:HttpClient) { }
 

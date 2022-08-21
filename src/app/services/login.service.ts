@@ -16,7 +16,7 @@ export class LoginService {
   }
   login(email:string,password:string){
     let userLogin={correo:email,clave:password};
-    return this.http.post('http://34.204.7.108:5000/login',userLogin).pipe(map((res:any)=>{
+    return this.http.post('http://54.209.153.70:5000/login',userLogin).pipe(map((res:any)=>{
       this.cookie.set('token',res.token);
       this.cookie.set('id_usuario',res.usuario[0].id);
       this.cookie.set('correo',res.usuario[0].correo)
