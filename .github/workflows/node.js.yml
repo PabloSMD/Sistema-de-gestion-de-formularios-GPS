@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install -g @angular/cli
-    - run: npm install
+    - run: npm install --force
     - run: ng build
     - run: ls;cd dist;ls
     
