@@ -78,7 +78,7 @@ padding-left: 40px;
 padding-right: 40px;
 }
 .side-bar {
-  height: 95vh;
+  height: 100vh;
   background-color: #eaf2ff;
   grid-area: side-bar;
 }

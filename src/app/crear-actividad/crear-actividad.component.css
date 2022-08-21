@@ -6,13 +6,13 @@
     height: 100vh;
     display: grid;
     grid-template-areas:
-  
+
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "side-bar main side-bar2"
     "footer footer footer";
-  
+
     grid-template-columns: 300px 900px 300px;
     grid-template-rows: 50px 1fr 1fr 1fr 50px;
   }
@@ -38,7 +38,7 @@
     grid-area: main;
   }
   .encuestasTitulo {
-  
+
     padding-bottom: 15px;
   }
   .crear-encuesta {
@@ -61,7 +61,7 @@
     background-color: white;
     border: solid gray;
     margin-bottom: 10px;
-  
+
   }
   .encuesta{
     background-color: #f3f3f3;
@@ -80,8 +80,9 @@
   padding-bottom: 20px;
   }
   .botones {
-   text-align: end;
+    text-align: end;
     padding-right: 40px;
+    padding-left: 340px;
   }
   .btnAceptar{
   background-color:#4879c4;
@@ -180,4 +181,3 @@
   text-align: right;
   padding-left: 10px;
   }
-  

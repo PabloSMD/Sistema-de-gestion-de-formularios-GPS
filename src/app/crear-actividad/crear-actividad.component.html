@@ -1,11 +1,11 @@
 <div class="container">
     <!-- <header class="header"> Header </header> -->
-  
+
     <!--
       SIDE BAR IZQUIERDO
     -->
     <app-side-bar-izq></app-side-bar-izq>
-  
+
     <main class="main-content">
       <div class="nav"></div>
       <div class="main-encuestas">
@@ -31,7 +31,8 @@
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label">Sub Tipo</label>
                   <div class="col-sm-10">
-                      <select formControlName="sub_tipo" class="form-select" name="languages" id="lang">
+                      <select formControlName="sub_tipo" class="form-select" name="languages" id="lang" style="width: 255px; margin-top: 7px; padding-top: 2px;
+                      padding-bottom: 3px;">
                         <option value="">Selecciona</option>
                         <option value={{i}} *ngFor="let i of actividades">{{i}}</option>
                       </select>
@@ -40,7 +41,8 @@
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label">Sexo Dirigido</label>
                   <div class="col-sm-10">
-                      <select formControlName="sexo_dirigido" class="form-select" name="languages" id="lang">
+                      <select formControlName="sexo_dirigido" class="form-select" name="languages" id="lang" style="width: 255px; margin-top: 11px; padding-top: 2px;
+                      padding-bottom: 3px;">
                         <option value="">Selecciona</option>
                         <option value="Todos">Todos</option>
                         <option value="masculino">Masculino</option>
@@ -51,7 +53,8 @@
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label">Carrera</label>
                   <div class="col-sm-10">
-                      <select formControlName="carrera" class="form-select" name="languages" id="lang">
+                      <select formControlName="carrera" class="form-select" name="languages" id="lang" style="width: 255px; margin-top: 8px;  padding-top: 2px;
+                      padding-bottom: 3px;">
                         <option value="">Selecciona</option>
                         <option value={{item}} *ngFor="let item of carreras">{{item}}</option>
                       </select>
@@ -78,8 +81,8 @@
                 <div style="padding-left: 340px;" class ="botones">
                   <button type="submit" [disabled]="!formFormulario.valid" style="margin-right: 10px;" class="btnAceptar btn">Enviar Solicitud</button>
                   <button type="button" class="btn btnCancelar">Cancelar</button>
-                </div>  
-              </form>  
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -95,4 +98,3 @@
      -->
     <footer class="footer"></footer>
   </div>
-  

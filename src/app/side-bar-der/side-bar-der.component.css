@@ -97,7 +97,7 @@
     grid-area: side-bar2;
     padding-left: 20px;
     padding-right: 20px;
-    height: 95vh;
+    height: 100vh;
   }
   .logoUser{
     width: 80px;
@@ -109,7 +109,7 @@
     margin-right: 21px;
   }
   .plataformas {
-    margin-top: 400px;
+    margin-top: 355px;
     padding-left: 70px;
     padding-right: 65px;
     text-align: center;
