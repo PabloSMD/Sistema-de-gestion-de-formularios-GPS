@@ -63,7 +63,7 @@ export class CrearEncuestaComponent implements OnInit {
     "Todas",
     'Diseño Gráfico',
     "Contador Público y Auditor",
-    "Ingeniería Civil en Informática",
+    "Ingeniería Civil Informática",
     "Ingeniería Comercial",
     "Pedagogía en Educación Física",
     "Psicología",
