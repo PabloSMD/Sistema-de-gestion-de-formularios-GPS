@@ -12,7 +12,8 @@
         class="col-6"
       >
         <a> <b style="font-size: 20px"> {{this.usuarioService.usuario[0].nombre}} </b></a>
-        <a> Estudiante</a>
+        <a *ngIf="this.usuarioService.usuario[0].rol==='1'"> Administrador</a>
+        <a *ngIf="this.usuarioService.usuario[0].rol==='2'"> Estudiante</a>
       </div>
     </div>
   </div>

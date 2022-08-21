@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   login(){
     this.loginService.login(this.formLogin.value.email,this.formLogin.value.password)
     .subscribe((res:any)=>{
-      console.log(res)
     },err=>console.log(err))
   }
 

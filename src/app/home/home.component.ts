@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
       this.usuarioService.usuario=res;
       let carrera=this.usuarioService.usuario[0].carrera;
       let sexo=this.usuarioService.usuario[0].sexo;
-      this.formularioService.getFormularios(carrera,sexo).subscribe((res:any[]) =>{
+      this.formularioService.getFormularios(carrera,sexo,this.cookie.get('id_usuario')).subscribe((res:any[]) =>{
         this.formularioService.formularios=res;
         this.formularioService.filteredForms = res;
         console.log(this.formularioService.formularios);

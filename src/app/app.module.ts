@@ -21,6 +21,8 @@ import { SafePipe } from './pipe/safePipe';
 import { LoginComponent } from './login/login.component';
 import {CookieService} from 'ngx-cookie-service';
 import { SidebarIzqAdminComponent } from './sidebar-izq-admin/sidebar-izq-admin.component';
+import { FormularioRespondidoComponent } from './formulario-respondido/formulario-respondido.component';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { SidebarIzqAdminComponent } from './sidebar-izq-admin/sidebar-izq-admin.
     EditarEncuestaComponent,
     SafePipe,
     LoginComponent,
-    SidebarIzqAdminComponent
+    SidebarIzqAdminComponent,
+    FormularioRespondidoComponent,
+    HomeAdminComponent,
   ],
   imports: [
     BrowserModule,

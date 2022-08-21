@@ -23,7 +23,7 @@ export class LoginService {
       this.cookie.set('nivel',res.usuario[0].rol);
       this.cookie.set('sexo',res.usuario[0].sexo);
       this.cookie.set('carrera',res.usuario[0].carrera);
-      if(res.usuario[0].nivel==='1'){
+      if(res.usuario[0].rol==='1'){
         this.router.navigate(['home-admin']);
       }else{
         this.router.navigate(['home']);

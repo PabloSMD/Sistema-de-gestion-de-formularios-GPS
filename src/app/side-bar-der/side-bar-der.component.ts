@@ -16,6 +16,7 @@ export class SideBarDerComponent implements OnInit {
     let id=this.cookie.get('id_usuario');
     this.usuarioService.getUsuario(id).subscribe((res:any) =>{
       this.usuarioService.usuario=res;
+      console.log(res);
     },
       (    err: any) => console.log(err))
   }

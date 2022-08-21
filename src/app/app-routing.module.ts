@@ -16,6 +16,8 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { EditarEncuestaComponent } from './editar-encuesta/editar-encuesta.component';
 import { LoginComponent } from './login/login.component';
+import { FormularioRespondidoComponent } from './formulario-respondido/formulario-respondido.component';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,10 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   //------------------- Home -----------------
   { path: 'home', component: HomeComponent },
+  
+  //------------------- HomeAdmin -----------------
+  { path: 'home-admin', component: HomeAdminComponent },
+
 
   //------------------- Encuestas -----------------
   { path: 'encuestas', component: EncuestasComponent },
@@ -49,6 +55,8 @@ const routes: Routes = [
   //----------------Mis Encuestas------------
   {path:'misFormularios',component:MisEncuestasComponent},
 
+  //----------------Formulario Respondido------------
+  {path:'formulariosRespondido',component:FormularioRespondidoComponent},
 
   //------------------------------------------
   //------------- Links Externos -------------

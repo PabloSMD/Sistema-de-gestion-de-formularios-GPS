@@ -5,31 +5,30 @@ import { FormularioService } from '../services/formulario.service';
 import { UsuarioService } from '../services/usuario.service';
 
 @Component({
-  selector: 'app-actividades',
-  templateUrl: './actividades.component.html',
-  styleUrls: ['./actividades.component.css']
+  selector: 'app-formulario-respondido',
+  templateUrl: './formulario-respondido.component.html',
+  styleUrls: ['./formulario-respondido.component.css']
 })
-export class ActividadesComponent implements OnInit {
-
+export class FormularioRespondidoComponent implements OnInit {
   p: number = 1;
 
   total: number = 0;
   _listFilter: string="";
 
-  filteredActividades: IFormlario[]=[];
+  filteredForms: IFormlario[]=[];
   
   constructor(public formularioService:FormularioService,private cookie:CookieService,private usuarioService:UsuarioService) { }
 
+  
   ngOnInit(): void {
     let id=this.cookie.get('id_usuario');
     this.usuarioService.getUsuario(id).subscribe((res:any) =>{
       this.usuarioService.usuario=res;
       let carrera=this.usuarioService.usuario[0].carrera;
       let sexo=this.usuarioService.usuario[0].sexo;
-      this.formularioService.getActividades(carrera,sexo,this.cookie.get('id_usuario')).subscribe((res:any[]) =>{
-        this.formularioService.actividades=res;
-        this.formularioService.filteredActividades=res;
-        console.log(this.formularioService.actividades);
+      this.formularioService.getFormulariosRespondidos(carrera,sexo,this.cookie.get('id_usuario')).subscribe((res:any[]) =>{
+        this.formularioService.formularios=res;
+        this.formularioService.filteredForms = res;
       },
       err => console.log(err))
       this.total = this.formularioService.formularios.length;
@@ -43,14 +42,14 @@ export class ActividadesComponent implements OnInit {
 
   set listFilter(value: string){
     this._listFilter = value;
-    this.formularioService.filteredActividades = 
-      this.listFilter? this.performFilter(this.listFilter) : this.formularioService.actividades;
+    this.formularioService.filteredForms = 
+      this.listFilter? this.performFilter(this.listFilter) : this.formularioService.formularios;
   }
   
   performFilter(filterBy:string) : IFormlario[]{
     filterBy = filterBy.toLocaleLowerCase();
-    return this.formularioService.actividades.filter((act:IFormlario) => 
-    act.titulo.toLocaleLowerCase().indexOf(filterBy) !== -1 || act.subtipo_formulario.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.formularioService.formularios.filter((form:IFormlario) => 
+    form.titulo.toLocaleLowerCase().indexOf(filterBy) !== -1 || form.subtipo_formulario.toLocaleLowerCase().indexOf(filterBy) !== -1);
     //retornar nuevo arreglo filtrado
   }
 }

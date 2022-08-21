@@ -26,20 +26,24 @@ export class FormularioService {
 
   constructor(private http:HttpClient) { }
   
-  getFormularios(carrera:string,sexo:string):Observable<IFormlario[]>{
-    const parametros={carrera:carrera,sexo:sexo};
+  getFormularios(carrera:string,sexo:string,id_usuario:string):Observable<IFormlario[]>{
+    const parametros={carrera:carrera,sexo:sexo,id_usuario:id_usuario};
     return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/formularios',parametros).pipe(map((res:any) => res.data));
   }
-  getEncuestas(carrera:string,sexo:string):Observable<IFormlario[]>{
-    const parametros={carrera:carrera,sexo:sexo};
+  getEncuestas(carrera:string,sexo:string,id_usuario:string):Observable<IFormlario[]>{
+    const parametros={carrera:carrera,sexo:sexo,id_usuario:id_usuario};
     return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/encuestas',parametros).pipe(map((res:any) => res.data));
   }
-  getActividades(carrera:string,sexo:string):Observable<IFormlario[]>{
-    const parametros={carrera:carrera,sexo:sexo};
+  getActividades(carrera:string,sexo:string,id_usuario:string):Observable<IFormlario[]>{
+    const parametros={carrera:carrera,sexo:sexo,id_usuario:id_usuario};
     return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/actividades',parametros).pipe(map((res:any) => res.data));
   }
   getMisFormularios(id:string):Observable<IFormlario[]>{
     return this.http.get<IFormlario[]>('http://'+this.enlace+':5000/misFormularios/'+id).pipe(map((res:any) => res.data));
+  }
+  getFormulariosRespondidos(carrera:string,sexo:string,id_usuario:string):Observable<IFormlario[]>{
+    const parametros={carrera:carrera,sexo:sexo,id_usuario:id_usuario};
+    return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/misFormulariosContestados',parametros).pipe(map((res:any) => res.data));
   }
   saveFormulario(formulario:IFormlario){
     return this.http.post<IFormlario[]>('http://'+this.enlace+':5000/ingresarformulario',formulario);

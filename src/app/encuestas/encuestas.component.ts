@@ -26,7 +26,7 @@ export class EncuestasComponent implements OnInit {
       this.usuarioService.usuario=res;
       let carrera=this.usuarioService.usuario[0].carrera;
       let sexo=this.usuarioService.usuario[0].sexo;
-      this.formularioService.getEncuestas(carrera,sexo).subscribe((res:any[]) =>{
+      this.formularioService.getEncuestas(carrera,sexo,this.cookie.get('id_usuario')).subscribe((res:any[]) =>{
         this.formularioService.encuestas=res;
         this.formularioService.filteredEncuestas=res;
         console.log(this.formularioService.encuestas);

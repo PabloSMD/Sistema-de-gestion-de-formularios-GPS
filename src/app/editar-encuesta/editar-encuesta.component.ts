@@ -60,11 +60,7 @@ export class EditarEncuestaComponent implements OnInit {
 
   EditarFormulario(formulario:any){
     this.formularioService.editarFormulario(this.id,formulario).subscribe(() => {
-      return this.formularioService.getFormularios("Ingenieria Civil Informatica","masculino").subscribe((res:any[])=>{
-        this.formularioService.formularios=res
-      },
-      err=> console.log(err)
-      )
+      
     });
     this.formFormulario.reset();
   }
