@@ -8,7 +8,7 @@ export class RespuestaService {
 
   constructor(private http:HttpClient) { }
 
-  public enlace:string="localhost";
+  public enlace:string="34.204.7.108";
 
   saveRespuesta(respuesta:IRespuesta){
     return this.http.post<IRespuesta>('http://'+this.enlace+':5000/respuesta',respuesta);

@@ -14,7 +14,7 @@ export class FormularioService {
   public filteredForms: IFormlario[] =[];
 
   public formulario:any=[];
-  public enlace:string="localhost";
+  public enlace:string="34.204.7.108";
 
   public encuestas:IFormlario[]=[];
   public filteredEncuestas:IFormlario[]=[];
