@@ -42,7 +42,7 @@ jobs:
       uses: D3rHase/ssh-command-action@v0.2.1
       with:
         # hostname / IP of the server
-          HOST: 34.204.7.108 
+          HOST: 54.209.153.70 
         # ssh port of the server
           PORT: ${{secrets.PORT}}
         # user of the server
