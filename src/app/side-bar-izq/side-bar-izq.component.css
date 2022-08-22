@@ -48,6 +48,9 @@
     margin-bottom: 35px;
     padding-left: 30px;
   }
+  p{
+    font-size: small;
+  }
   .date {
     font-size: 20px;
   }
