@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormularioService } from '../services/formulario.service';
 import { IEstado } from '../formulario';
 import { CookieService } from 'ngx-cookie-service';
+import { IFormlario } from '../formulario';
 @Component({
   selector: 'app-mis-encuestas',
   templateUrl: './mis-encuestas.component.html',
@@ -10,8 +11,9 @@ import { CookieService } from 'ngx-cookie-service';
 export class MisEncuestasComponent implements OnInit {
   p: number = 1;
   total: number = 0;
+  _listFilter: string="";
   constructor(public formularioService:FormularioService,private cookie:CookieService) { }
-  
+
   ngOnInit(): void {
     let id=this.cookie.get('id_usuario');
     console.log(id);
@@ -20,6 +22,23 @@ export class MisEncuestasComponent implements OnInit {
       console.log(this.formularioService.misFormularios);
     },
     err => console.log(err))
+  }
+
+  get listFilter(): string{
+    return this._listFilter;
+  }
+
+  set listFilter(value: string){
+    this._listFilter = value;
+    this.formularioService.filteredForms =
+      this.listFilter? this.performFilter(this.listFilter) : this.formularioService.formularios;
+  }
+
+  performFilter(filterBy:string) : IFormlario[]{
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.formularioService.formularios.filter((form:IFormlario) =>
+    form.titulo.toLocaleLowerCase().indexOf(filterBy) !== -1 || form.subtipo_formulario.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    //retornar nuevo arreglo filtrado
   }
 
   finalizarEncuesta(Id:number){

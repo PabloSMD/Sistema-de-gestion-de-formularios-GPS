@@ -9,7 +9,11 @@
   <main class="main-content">
     <div class="nav"></div>
     <div class="main-encuestas">
-      <h1 class="encuestasTitulo"><b>Mis Formularios</b></h1>
+      <h1 class="encuestasTitulo" style="padding-bottom: 25px;"><b>Mis Formularios</b></h1>
+
+      <input type="text" placeholder="Buscar "  style="margin-left: 5px; border-radius: 10px;  font-size: large; border-color: #e1e1e1;"
+        [(ngModel)]="listFilter"/> <i class="fa fa-search" aria-hidden="true" style="margin-left: 5px;"></i>
+
       <div style="text-align: right">
         <pagination-controls previousLabel="Anterior"
         nextLabel="Siguiente" (pageChange)="p = $event"></pagination-controls>
